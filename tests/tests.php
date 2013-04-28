@@ -47,15 +47,7 @@ class SimpleFacebookTestCase extends PHPUnit_Framework_TestCase {
                "locale": "en_US"
             }';
         
-        self:$data = json_encode($json, true);
-    }
-
-    /**
-     * @expectedException SimpleFacebookException
-     */
-    public function testConstructorWithoutRedirect_uriConfigVar() {
-        $config = array();
-        new SimpleFacebook($this->sdkMock, $config);
+        self:$data = json_decode($json, true);
     }
 
     public function testConstructorWithValidConfigVars() {
